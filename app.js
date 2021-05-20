@@ -13,8 +13,13 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 
 const app = express();
 
+
+
 // require database configuration
 require('./configs/db.config');
+
+// use section
+require('./configs/session.config')(app);
 
 // Middleware Setup
 app.use(logger('dev'));
